@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./dist", // 1. Diz ao TypeScript para criar a pasta 'dist'
+    "rootDir": "./", // 2. Mantém a estrutura de pastas (api, src) dentro da 'dist'
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "api/**/*.ts"
+  ], // 3. Diz ao TypeScript quais pastas compilar
+  "exclude": [
+    "node_modules"
+  ]
+}
