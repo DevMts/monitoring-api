@@ -11,6 +11,10 @@ export class MonitoringRepositoryInMemory implements MonitoringRepository {
   async getMonitoringData() {
     return this.data;
   }
+  async findMonitoringById(id: string): Promise<Monitoring | null> {
+    const monitoring = this.data.find((data) => data.id === id);
+    return monitoring ? monitoring : null;
+  }
 
   async saveMonitoringData({ assunt, hour, name, students }: Omit<Monitoring, "id" | "createdAt">) {
 

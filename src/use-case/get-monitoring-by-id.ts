@@ -1,16 +1,14 @@
 import { MonitoringRepository } from "../repository/monitoring-repository";
 
-export class DeleteMonitoringUseCase {
+export class GetMonitoringByIdUseCase {
   constructor(private monitoringRepository: MonitoringRepository) { }
-
-
   async execute(id: string) {
-    const monitoring = await this.monitoringRepository.findMonitoringById(id);
+    const monitoring = this.monitoringRepository.findMonitoringById(id);
 
     if (!monitoring) {
       throw new Error("Monitoring not found");
     }
 
-    return this.monitoringRepository.deleteMonitoringData(id);
+    return monitoring
   }
 }

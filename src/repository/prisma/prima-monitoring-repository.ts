@@ -15,4 +15,12 @@ export class PrismaMonitoringRepository implements MonitoringRepository {
       data
     });
   }
+
+  findMonitoringById(id: string) {
+    const monitoring = prisma.monitoring.findUnique({
+      where: { id },
+    });
+
+    return monitoring
+  }
 }

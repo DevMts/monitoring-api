@@ -8,3 +8,6 @@ export default async function handler(request: any, response: any) {
   app.server.emit('request', request, response);
   log("Server is running on port" + env.PORT);
 }
+app.listen({
+  port: env.PORT,
+});
